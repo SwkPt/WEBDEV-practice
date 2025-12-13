@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="refresh" content="5">-->
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'kanit';
+            src: url('./Kanit/Kanit-Light.ttf');
+        }
+        body{
+            background-color: gray;
+            font-family: 'kanit';
+            padding-left: 20px;
+            margin-left: 15px;
+        }
+        #reg{
+            background-color: bisque;
+            color: aqua;
+            font-size: 56px;
+            margin: 15px;
+            margin-right: 860px;
+            padding-left: 15px;
+            border: 1px red solid;
+        }
+        .form {
+            border: 3px solid blue;
+            display: block;
+
+        }
+        .header-form{
+            font-weight: 800;
+        }
+        .gender{
+            display: flex;
+        }
+        
+        .container{
+            display: flex;
+        }
+        .item-left{
+            background-color: red;
+            flex: 2;
+        }
+        .item-right{
+            background-color: blue;
+            flex: 1;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+        .item1,.item3,.item5{
+            background-color: aquamarine;
+        }
+        .item2,.item4{
+            background-color: red;
+        }
+        .container2{
+            /*height: 1800px;*/
+            height: 100px;
+        }
+        .relative{
+            position: relative;/*position มี top bottom left right*/
+            left: 20px;
+        }
+        .absolute{
+            position: absolute;/*lock ที่บน space ของ web*/
+            left: 0;
+            top: 0;
+        }
+        .fixed{
+            position: fixed; /*lock ที่บน หน้าจอ ของ web*/
+            top: 0;
+            left: 0;
+        }
+        .sticky{
+            position: sticky;/*เป็น fixed ที่กำหนดขอบเขตได้*/
+            top: 50px;
+        }
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        .cssimage{
+            background-image: url("https://i.imgur.com/atsp7o7.jpeg");
+            height: 100px;/*relative to ori size -> 
+            if code is smaller img is cut else it is repeated
+            this can be fix with background-size: contain;*/
+            background-size: contain;
+            background-position: top right;
+            background-repeat: no-repeat;/*noreapte*/
+        }
+    </style>
+</head>
+<body> 
+    
+    <a href="https://www.w3schools.com/html/" target="_blank">send help</a> <br>
+    <div class="cssimage"></div>
+   <div>
+        <div class="float-left">
+            <img src="https://i.imgur.com/kA7dDof.jpeg" height="200" width="200" alt="">
+        </div>
+        <div class="float-right">uwah</div>
+        <div style="clear: both;"></div><!--ทำให้float ไม่ปน-->
+   </div>
+
+    css practice
+    <div class="container">
+        <div class="item-left">left</div>
+        <div class="item-right">right</div>
+    </div>
+    <div class="grid-container">
+        <div class = "grid-item item1">item1</div>
+        <div class = "grid-item item2">item2</div>
+        <div class = "grid-item item3">item3</div>
+        <div class = "grid-item item4">item4</div>
+        <div class = "grid-item item5">item5</div>
+    </div>
+
+    <div class="container2">
+        <div class="static">static</div>
+        <div class="relative">relative</div>
+        <div class="absolute">absolute</div>
+        <div class="fixed">fixed</div>
+        <div class="sticky">sticky</div>
+    </div>
+    <div id="reg">Register form</div>
+   
+</body>
+</html>
