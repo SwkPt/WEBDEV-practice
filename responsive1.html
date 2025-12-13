@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imageanimationtest{
+            background-image: url("https://i.imgur.com/atsp7o7.jpeg");
+            height: 100px;
+            width: 100px;
+            background-size: contain;
+            transition: width 2s linear 1s;
+        }
+        .imageanimationtest:hover{
+            width: 500px;
+        }
+        .container .item{
+            background-color: blue;
+        }
+        .main-container > .item{ /*เครื่องหมาย > ใช้เพื่อให้ทำงานกับ child 1 ชั้น 
+            ถ้าไม่มี ->paddding จะมีรอบ child of item 123 ด้วย*/
+            background-color: aqua;
+            padding: 5px;
+        }
+        .button{
+            border: 0px;
+            background-color: gray;
+            padding: 10px;
+        }
+        .button.active{ 
+            background-color: blue;
+        }
+         .button.warning{
+            background-color: red;
+        }
+        .item1 + .item2{ /* เจอตัวแรก แล้วเจอตัวสอง ทำให้ตัวสอง*/
+            background-color: violet;
+        }
+        /*atrebute selector*/
+        input[type=text]{/*ทั้งสามตัวเป็น input text*/
+            border: 1px pink solid;
+        }
+        /*pseudo class
+        มักมี 3 อย่าง active hover
+        */
+        .buttonnew{
+            background-color: pink;
+            border: 0;
+            padding: 10px;
+        }
+        .buttonnew:hover{/*this is a pseudo class hover*/
+            background-color: #db0fe2;
+        }
+        .buttonnew:active{/*this is a pseudo class กด*/
+            background-color: #2f0fe2;
+        }
+        .buttonnew:focus{/*this is a pseudo class กดล่าสุด*/
+            background-color: red;
+        }
+        input:focus{
+            background-color: red;
+        }
+        .t-container .item:first-child{
+            background-color: aqua;
+        }
+        .t-container .item:last-child{
+            background-color: red;
+        }
+        .t-container .item:nth-child(2){
+            background-color: gray;
+        }
+        .t-container .item:nth-child(1){/*style ล่าง overide บน*/
+            background-color: gray;
+        }
+        .pseudo-element{
+            color: #db0fe2;
+        }
+        /*
+        .pseudo-element::before{ before/after มีได้ทีละตัว
+            content: '?';
+        }*/
+        .pseudo-element::first-letter{
+            font-size: 99px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        container
+        <div class="item">
+            item
+        </div>
+    </div>
+    <div class="footer-container">
+        container
+        <div class="item">
+            item
+        </div>
+    </div>
+    <div> </div>
+    <div class="main-container">
+        main container
+        <div class="item">
+            item
+            <div class="item">
+                childofitem1
+            </div>
+            <div class="item">
+                childofitem2
+            </div>
+            <div class="item">
+                childofitem3
+            </div>
+        </div>
+    </div>
+    <button class="button">default button</button>
+    <button class="active">class active not button</button>
+    <button class="button active">active</button>
+    <button class="button warning">warning</button>
+    <div class="item1">item1</div>
+    <div class="item2">item2</div>
+    <input type="text" name="firstname">
+    <input type="text" name="lastname">
+    <input type="text" name="description">
+    <div>
+    <button class="buttonnew">responsive button</button>
+    <input type="text">
+    </div>
+    <div class="t-container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="pseudo-element">
+        Lobster
+    </div>
+    <div class="imageanimationtest" ></div>
+</body>
+</html>
