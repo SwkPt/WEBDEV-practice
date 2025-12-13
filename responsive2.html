@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: red;
+        }
+        @media screen and (max-width: 768px) {
+            .container{/* if width <= 768px (tablet or smaller/windowed tab) bg is blue*/
+                background-color: blue;
+            }
+        }
+        .a-container{
+            display: flex;
+        }
+        .a-container .item{
+            padding: 10px;
+            flex: 1;
+        }
+        @media screen and (max-width: 768px) {
+            .a-container {
+                flex-direction: column;
+            }
+        }
+        .b-container{
+            display: grid;
+            background-color: yellow;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .b-container .item{
+            padding: 10px;;
+        }
+        @media screen and (max-width: 768px) {
+            .b-container{
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media screen and (max-width: 640px) {
+            .b-container{
+                grid-template-columns: 1fr;
+            }
+        }
+        ul{
+            list-style: none;
+            margin:  0;
+            padding: 0;
+        }
+        
+        .desktop ul{
+            display: flex;
+        }
+        .desktop ul > li{
+            margin-right: 20px;
+        }
+        .mobile-menu, .mobile {
+                display: none;/*หายเลย*/
+        }
+        @media screen and (max-width: 768px) {
+            .desktop {
+                display: none;/*หายเลย*/
+            }
+            .mobile-menu{
+                display: block;
+            }
+            .mobile-menu:hover + .mobile{
+                display: block;
+            }
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    hello world breakpoint
+    </div>
+    <div>
+        <picture>
+            <source media="(max-width: 768px)"
+            srcset="https://i.imgur.com/qY9uDfZ.jpeg" width="150" height="150"
+            > <!-- use case for image change base on width: higher resolution pic pc and lower ofr mobile for faster loading-->
+        <img src="https://i.imgur.com/aQ5Ntdg.png" alt="" width="200" height="200">
+        </picture>
+    </div>
+    <div class="a-container"><!--flex-->
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+    </div>
+    <div class="b-container"><!--grid-->
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item2</div>
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item2</div>
+    </div>
+    <!--menu bar attemp-->
+    <div class="desktop">
+        <ul>
+            <li>Home</li>
+            <li>contact us</li>
+            <li>about</li>
+        </ul>
+    </div>
+    <div class="mobile-menu">Menu</div>
+    <div class="mobile">
+        <ul>
+            <li>Home</li>
+            <li>contact us</li>
+            <li>about</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
